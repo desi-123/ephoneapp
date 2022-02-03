@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Admin User",
+        "email": "admin@gmail.com",
+        "password": "123321",
+        "isAdmin": true
+    },
+    {
+        "name": "Desi",
+        "email": "desi@gmail.com",
+        "password": "123321",
+        "isAdmin": false
+    },
+    {
+        "name": "Tsi",
+        "email": "tsi@gmail.com",
+        "password": "123321",
+        "isAdmin": false
+    }
+]

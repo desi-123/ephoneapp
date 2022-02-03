@@ -1,0 +1,17 @@
+@mixin btn {
+    padding: .3rem 0.7rem;
+    text-transform: uppercase;
+    padding: 1.5rem 4rem;
+    border-radius: 5rem;
+    transition: all .5s;
+    position: relative;
+    font-weight: 700;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@mixin link {
+    &:hover {
+        text-decoration: underline;
+    }
+}

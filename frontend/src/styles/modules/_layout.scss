@@ -1,0 +1,32 @@
+.App {
+  display: grid;
+  grid-template-rows: 75vh min-content 25vh;
+  grid-template-columns:
+    [sidebar-start] 8rem
+    [sidebar-end full-start] minmax(5rem, 1fr)
+    [center-start] repeat(6, [col-start] minmax(min-content, 19rem) [col-end])
+    [center-end] minmax(5rem, 1fr) [full-end];
+
+  & > * {
+    padding: 4rem;
+    font-size: 3rem;
+  }
+}
+
+.fa-spinner {
+  color: $mainPurple;
+  width: 27rem;
+  text-align: center;
+}
+
+.loading-paragraph {
+  width: 27rem;
+  text-align: center;
+  color: $mainOrange;
+}
+
+.error {
+  color: orangered;
+  width: 27rem;
+  text-align: center;
+}

@@ -1,0 +1,40 @@
+.hero {
+    color: #fff;
+    box-shadow: $box-shadow;
+    &__center-title {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-shadow: $box-shadow;
+    }
+    &__title {
+        font-size: 3rem;
+        letter-spacing: .7rem;
+        font-weight: 700;
+        display: block;
+        animation: moveTitleLeft 1s ease-out;
+        transition: all .2s;
+        &:hover {
+            transform: skewY(4deg) skewX(20deg) scale(1.2);
+            text-shadow: .5rem 1rem 2rem rgba(0, 0, 0, .2);
+        }
+    }
+    &__subtitle {
+        font-size: 1.9rem;
+        font-weight: 700;
+        letter-spacing: .3rem;
+        display: block;
+        animation: moveTitleRight 1s ease-in-out;
+        transition: all .2s;
+    }
+
+    &__paragraph {
+        position: absolute;
+        font-size: 1.7rem;
+        padding: 1rem 5rem;
+        top: 30%;
+        left: 10%;
+        transform: translateY(30%);
+    }
+}

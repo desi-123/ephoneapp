@@ -1,0 +1,19 @@
+.input-search {
+ display: flex;
+ align-items: center;
+
+ &--btn {
+  background-color: $mainPurple;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: .7rem 1rem;
+  border: none;
+  margin-left: -3.5rem;
+ }
+  &--input {
+  background-color: $color-grey-light-1;
+  font-weight: 500;
+  padding: .7rem 17rem .7rem .7rem;
+  border-radius: .5rem;
+ }
+}

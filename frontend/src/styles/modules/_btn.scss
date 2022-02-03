@@ -1,0 +1,44 @@
+
+.btn {
+@include btn();
+    &:hover {
+        transform: translateY(-.3rem);
+        box-shadow: $box-shadow;
+    }
+
+    &:active {
+        transform: translateY(-.1rem);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .5s;
+    }
+
+    &:hover::after {
+        transform: scale(1.1);
+        opacity: 0;
+        background-color: $color-grey-light-1;
+    }
+}
+
+.btn-update {
+    margin-top: 5rem;
+}
+
+.btn-sign-in {
+    margin-top: 5rem;
+}
+
+.btn-sign-up {
+    margin-top: 5rem;
+}

@@ -1,0 +1,53 @@
+.place-order {
+  grid-column: center-start / center-end;
+  font-size: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  grid-gap: 4rem;
+  color: $mainLightBlue-2;
+  font-weight: 700;
+
+  &--image {
+    height: 20rem;
+    width: 20rem;
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  &--summary {
+    font-size: 2rem;
+    color: $mainLightBlue-1;
+  }
+
+  &--summary-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 21rem;
+    margin-bottom: 2rem;
+  }
+  &--shipping {
+    text-decoration: underline;
+    margin: 0.5rem 0;
+    font-size: 2.5rem;
+  }
+
+  &--tax {
+    text-decoration: underline;
+    margin: 0.5rem 0;
+    font-size: 2.5rem;
+  }
+
+  &--total {
+    text-decoration: underline;
+    margin: 0.5rem 0;
+    font-size: 2.5rem;
+  }
+
+  &--subtotal {
+    text-transform: capitalize;
+    text-decoration: underline;
+    margin: 0.5rem 0;
+    font-size: 2.5rem;
+  }
+}
