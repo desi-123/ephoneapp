@@ -7,14 +7,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { PhoneProvider } from './context/phone';
 import store from './redux/store'
+import { SidebarProvider } from './context/sidebar';
 
 
 ReactDOM.render(
   <React.StrictMode>
     <PhoneProvider>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <SidebarProvider>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </SidebarProvider>
     </PhoneProvider>
   </React.StrictMode>,
   document.getElementById('root')

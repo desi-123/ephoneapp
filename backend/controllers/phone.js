@@ -1,20 +1,18 @@
 const asyncHandler = require('../middleware/async')
 const Phone = require('../models/Phone')
-const ApiFeatures = require('../utils/apiFeatures')
 
-const getPhones = (req, res, next) => {
-  // const resPerPage = 4
-  const ephoneCount = Phone.countDocuments()
-  const apiFeatures = new ApiFeatures(Phone.find(), req.query).search().filter()
-  // .pagination(resPerPage)
-  apiFeatures.query
-    .then((ephones) => {
-      res.statusCode = 200
-      res.setHeader('Content-Type', 'application/json')
-      res.json(ephones)
-    })
-    .catch((err) => next(err))
-}
+const getPhones = asyncHandler(async(req, res, next) => {
+  const keyword = req.query.keyword ? {
+    name: {
+      $regex: req.query.keyword,
+      $options: 'i'
+    }
+  } : {}
+  const ephones = await Phone.find({...keyword})
+
+  res.json(ephones)
+
+})
 
 const getPhone = asyncHandler(async (req, res, next) => {
   const ephone = await Phone.findById(req.params.id)
@@ -78,10 +76,49 @@ const deletePhone = asyncHandler(async (req, res, next) => {
   }
 })
 
+const createPhoneReview = asyncHandler(async (req, res) => {
+  const { rating, comment } = req.body
+
+  const ephone = await Phone.findById(req.params.id)
+
+  if (ephone) {
+    const alreadyReviewed = ephone.reviews.find(
+      (r) => r.user.toString() === req.user._id.toString()
+    )
+
+    if (alreadyReviewed) {
+      res.status(400)
+      throw new Error('ePhone already reviewed')
+    }
+
+    const review = {
+      name: req.user.name,
+      rating: Number(rating),
+      comment,
+      user: req.user._id,
+    }
+
+    ephone.reviews.push(review)
+
+    ephone.numReviews = ephone.reviews.length
+
+    ephone.rating =
+      ephone.reviews.reduce((acc, item) => item.rating + acc, 0) /
+      ephone.reviews.length
+
+    await ephone.save()
+    res.status(201).json({ message: 'Review added' })
+  } else {
+    res.status(404)
+    throw new Error('ephone not found')
+  }
+})
+
 module.exports = {
   getPhones,
   getPhone,
   createPhones,
   updatePhone,
   deletePhone,
+  createPhoneReview
 }

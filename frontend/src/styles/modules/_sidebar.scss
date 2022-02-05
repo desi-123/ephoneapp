@@ -1,5 +1,98 @@
-.sidebar {
+.section {
     background-color: $mainPurple;
     grid-column: sidebar-start / sidebar-end;
     grid-row: 1 / -1;
 }
+
+.menu-icon {
+    position: relative;
+    height: 2rem;
+    width: 2rem;
+    position: absolute;
+    margin-left: -2rem;
+    margin-top: -2rem;
+    cursor: pointer;
+    animation: bounce 2s ease-in-out infinite;
+
+        &::before {
+        content: "";
+        position: absolute;
+        top: 1;
+        left: 1;
+        width: 3rem;
+        height: .3rem;
+        background-color: $color-grey-light-1;
+
+    }
+
+        &--middle {
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 3rem;
+        height: .3rem;
+        background-color: $color-grey-light-1;
+    }
+
+        &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 3rem;
+        height: .3rem;
+        background-color: $color-grey-light-1;
+    }
+}
+
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem;
+    list-style: none;
+    color: $color-grey-light-1;
+
+    &--list {
+      text-decoration: none;
+      color: $color-grey-light-1;
+      text-transform: uppercase;
+      font-size: 2rem;
+
+      &:hover {
+        text-decoration: underline;
+        transform: translateY(-.2rem) scale(1.1);
+      }
+    }
+}
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right bottom, $lightPurple, $mainPurple);
+    transform: translate(-100%);
+    z-index: -1;
+  }
+  .show-sidebar {
+    transform: translate(0);
+    z-index: 999;
+  }
+
+    .close-btn {
+    font-size: 3rem;
+    background: transparent;
+    border-color: transparent;
+    color: $color-grey-light-1;
+    transition: none;
+    cursor: pointer;
+    color: $color-grey-light-1;
+    margin-top: 0.7rem;
+
+    &:hover {
+      color: $lightRed;
+    }
+  }

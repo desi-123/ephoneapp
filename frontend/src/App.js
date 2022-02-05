@@ -13,6 +13,7 @@ import Profile from './screens/Profile'
 import Shipping from './screens/Shipping'
 import Payment from './screens/Payment'
 import PlaceOrder from './screens/PlaceOrder'
+import About from './components/About'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Sidebar />
         <Header />
         <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
         <Route exact path="/ephone/:id" component={SinglePhone} />
         <Route path="/cart/:id?" component={Cart} />
         <Route path="/checkout" component={Checkout} />

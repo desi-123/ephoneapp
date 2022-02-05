@@ -1,31 +1,63 @@
 .form {
- display: flex;
- flex-direction: column;
- font-size: 1.5rem;
- width: 75rem;
- box-shadow: $box-shadow;
- align-items: center;
- padding: 9rem;
- margin-bottom: 7rem;
- transform: translateX(50%);
- background-color: $mainPurple;
- border-radius: 5rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  width: 75rem;
+  box-shadow: $box-shadow;
+  align-items: center;
+  padding: 12rem;
+  margin-bottom: 7rem;
+  transform: translateX(50%);
+  background-color: $mainPurple;
+  border-radius: 5rem;
+  margin-left: -9rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    padding: 10rem;
+    width: 55rem;
+    margin-left: -9rem;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    padding: 9rem;
+    width: 38rem;
+    margin-left: -7rem;
+  }
+  @media only screen and (max-width: $bp-small) {
+    padding: 7rem;
+    width: 25rem;
+    margin-left: -6rem;
+  }
 }
 
-
-label, input {
- display: inline-block;
- width: 100%;
+label,
+input {
+  display: inline-block;
+  width: 100%;
 }
 
 input {
- text-align: start;
- padding: .9rem;
- border-radius: 1rem;
- width: 44rem;
- background-color: $color-grey-light-1;
+  text-align: start;
+  padding: 0.9rem;
+  border-radius: 1rem;
+  width: 44rem;
+  background-color: $color-grey-light-1;
+
+  @media only screen and (max-width: $bp-largest) {
+    padding: 1.2rem;
+    width: 40rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 1.2rem;
+    width: 30rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 1.1rem;
+    width: 22rem;
+  }
 }
 
 .btn-update {
- margin-top: 5rem;
+  margin-top: 5rem;
 }

@@ -1,54 +1,119 @@
 .cart-item {
-    display: flex;
-    min-width: 120rem;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  min-width: 110rem;
+  align-items: center;
+  justify-content: space-around;
 
-    &__image--small {
-        height: 7rem;
-        width: 7rem;
-        border-radius: .5rem;
+  @media only screen and (max-width: $bp-largest) {
+    display: flex;
+    min-width: 80rem;
+    align-items: center;
+    padding: 0.1rem;
+    font-size: 1.9rem;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    min-width: 50rem;
+    align-items: center;
+    padding: 0.1rem;
+    font-size: 1.4rem;
+  }
+  @media only screen and (max-width: $bp-small) {
+    display: flex;
+    min-width: 30rem;
+    align-items: center;
+    padding: 0.1rem;
+    font-size: 1.2rem;
+  }
+  &__image--small {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 0.5rem;
+  }
+
+  &--remove {
+    fill: $lightRed;
+    &:hover {
+      cursor: pointer;
+      transform: translateY(-0.1rem);
     }
-
-}
-
-.cart-column {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    min-width: 120rem;
+  }
 }
 
 .cart-maths {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 75rem;
-    text-align: center;
-    margin: 5rem 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75rem;
+  text-align: center;
+  margin: 5rem 10rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    width: 45rem;
+    font-size: 1.9rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    width: 26rem;
+    font-size: 1.9rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    width: 16rem;
+    font-size: 1.6rem;
+  }
 }
 
 .cart-order {
-    order: -1;
-    margin-left: 31rem;
+  order: -1;
+  margin-left: 31rem;
 
+  @media only screen and (max-width: $bp-largest) {
+    margin-left: 15rem;
+    font-size: 1.9rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    margin-left: 7rem;
+    font-size: 1.7rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin-left: -1rem;
+    font-size: 1.4rem;
+  }
 }
 
 .cart-checkout {
-    text-align: center;
-    width: 120rem;
+  text-align: center;
+  min-width: 120rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    min-width: 77rem;
+    font-size: 1.4rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    min-width: 50rem;
+    font-size: 1.4rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    min-width: 30rem;
+    font-size: 1.4rem;
+  }
 }
 
-.empty-cart{
-    width: 50rem;
-    height: 10rem;
+.empty-cart {
+  width: 50rem;
+  height: 10rem;
 
-    &--link {
-        text-align: center;
-        font-size: 4rem;
-        text-decoration: none;
-        &:hover {
-            transform: translateY(-.5rem) scale(1.1);
-        }
+  &--link {
+    text-align: center;
+    font-size: 4rem;
+    text-decoration: none;
+    &:hover {
+      transform: translateY(-0.5rem) scale(1.1);
     }
+  }
 }

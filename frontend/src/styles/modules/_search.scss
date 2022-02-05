@@ -1,19 +1,34 @@
 .input-search {
- display: flex;
- align-items: center;
+  display: flex;
+  align-items: center;
 
- &--btn {
-  background-color: $mainPurple;
-  font-weight: 700;
-  font-size: 1.5rem;
-  padding: .7rem 1rem;
-  border: none;
-  margin-left: -3.5rem;
- }
+  &--btn {
+    background-color: $mainPurple;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 0.7rem 1rem;
+    border: none;
+    margin-left: -3.5rem;
+    @media only screen and (max-width: $bp-medium) {
+      font-weight: 500;
+      font-size: 1.5rem;
+      padding: 0.3rem 1rem;
+      border: none;
+      margin-left: -3.5rem;
+    }
+  }
   &--input {
-  background-color: $color-grey-light-1;
-  font-weight: 500;
-  padding: .7rem 17rem .7rem .7rem;
-  border-radius: .5rem;
- }
+    background-color: $color-grey-light-1;
+    font-weight: 500;
+    padding: 0.7rem 17rem 0.7rem 0.7rem;
+    border-radius: 0.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      padding: 0.3rem 1rem 0.5rem 0.3rem;
+      border: none;
+      margin-left: -3.5rem;
+      width: 25rem;
+      margin-left: 3rem;
+    }
+  }
 }

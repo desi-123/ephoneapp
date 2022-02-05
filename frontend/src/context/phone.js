@@ -12,10 +12,10 @@ const PhoneContext = createContext()
 const PhoneProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState)
 
-    const fetchEphones = async () => {
+    const fetchEphones = async (keyword = '') => {
         dispatch({ type: ActionTypes.PHONE_LIST_REQUEST })
         try {
-        const response = await axios.get(`/api/v1/ephones`)
+        const response = await axios.get(`/api/v1/ephones?keyword=${keyword}`)
         const ephones = response.data
         dispatch({
             type: ActionTypes.PHONE_LIST_SUCCESS,

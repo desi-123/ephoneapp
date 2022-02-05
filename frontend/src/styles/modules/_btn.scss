@@ -1,5 +1,6 @@
 
 .btn {
+margin-top: 1.5rem;
 @include btn();
     &:hover {
         transform: translateY(-.3rem);

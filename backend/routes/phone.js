@@ -5,7 +5,8 @@ const {
     createPhones, 
     getPhone,  
     updatePhone, 
-    deletePhone 
+    deletePhone, 
+    createPhoneReview
 } = require('../controllers/phone')
 
 const ephonesRouter = express.Router()
@@ -14,6 +15,10 @@ ephonesRouter
     .route('/')
     .get(getPhones)
     .post(verifyUser, createPhones)
+
+ephonesRouter
+.route('/:id/reviews')
+.post(verifyUser, createPhoneReview)
 
 ephonesRouter
     .route('/:id')

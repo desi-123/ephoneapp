@@ -14,3 +14,18 @@ export const phone_reducer = (
       return state
   }
 }
+
+export const phoneReviewCreateReducer = (state = {}, action) => {
+  switch (action.type) {
+    case ActionTypes.PHONE_CREATE_REVIEW_REQUEST:
+      return { loading: true }
+    case ActionTypes.PHONE_CREATE_REVIEW_SUCCESS:
+      return { loading: false, success: true }
+    case ActionTypes.PHONE_CREATE_REVIEW_FAIL:
+      return { loading: false, error: action.payload }
+    case ActionTypes.PHONE_CREATE_REVIEW_RESET:
+      return {}
+    default:
+      return state
+  }
+}

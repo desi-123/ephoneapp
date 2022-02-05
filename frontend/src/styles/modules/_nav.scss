@@ -1,4 +1,5 @@
 .header {
+    z-index: 20;
     grid-column: full-start / full-end;
 
     background-image: linear-gradient( to left top,
@@ -13,9 +14,18 @@
 }
 
 .nav {
+    background-color: $mainPurple;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: -1rem -2rem;
+    padding: 1rem;
+
+    @media only screen and (max-width: $bp-medium) {
+    padding: .2rem .3rem;
+}
+
+
 
     &__logo {
         text-decoration: none;
@@ -23,12 +33,24 @@
         font-weight: 700;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin-left: 3rem;
+
+        @media only screen and (max-width: $bp-small) {
+            display: none;
+        }
     }
     &__item {
         display: flex;
         margin: auto 3rem;
         font-weight: 500;
         font-size: 1.9rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
     }
     &__product {
         text-decoration: none;
@@ -40,6 +62,10 @@
         align-items: center;
         padding: 0 2rem;
         margin-right: 1rem;
+
+        @media only screen and (max-width: $bp-small) {
+            display: none;
+        }
     }
 }
 

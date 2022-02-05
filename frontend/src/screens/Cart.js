@@ -38,10 +38,10 @@ const Cart = ({ match, location, history }) => {
           </div>
         ) : (
           <div className="cart-content">
-            <CartColumn />
             {cartItems.map((cartItem) => (
               <section key={cartItem.ephone} className="cart-item">
                 <div className="cart-item__image">
+                  <p>Item</p>
                   <img
                     className="cart-item__image--small"
                     src={cartItem.image}
@@ -49,10 +49,12 @@ const Cart = ({ match, location, history }) => {
                   />
                 </div>
                 <div className="cart__price">
+                  <p>Price</p>
                   <h5>{formatPrice(cartItem.price)}</h5>
                 </div>
 
                 <div className="amount">
+                  <p>Number</p>
                   <select
                     value={cartItem.amount}
                     onChange={(e) =>
@@ -70,10 +72,11 @@ const Cart = ({ match, location, history }) => {
                 </div>
 
                 <div className="cart-item__remove">
+                  <p>Remove</p>
                   <button
                     onClick={() => removeCartItemHandler(cartItem.ephone)}
                   >
-                    <FaTrash />
+                    <FaTrash className="cart-item--remove" />
                   </button>
                 </div>
               </section>
